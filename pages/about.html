@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Elite Group</title>
+    <title>About Us - Elite Group Facility Management Service</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <style>
         /* Enhanced About Page Styles */
         html {
@@ -722,112 +724,6 @@
     </footer>
 
     <script src="../js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for the navigation links
-            const navLinks = document.querySelectorAll('.nav-pills a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all links
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Get the target section
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    // Scroll to the target section
-                    if (targetSection) {
-                        const navHeight = document.querySelector('.about-navigation').offsetHeight;
-                        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Scroll to top button
-            const scrollTop = document.querySelector('.scroll-top');
-            
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollTop.classList.add('active');
-                } else {
-                    scrollTop.classList.remove('active');
-                }
-            });
-            
-            scrollTop.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Update active nav link on scroll
-            window.addEventListener('scroll', function() {
-                const sections = document.querySelectorAll('section[id]');
-                const navHeight = document.querySelector('.about-navigation').offsetHeight;
-                
-                sections.forEach(section => {
-                    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navHeight - 100;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    const scrollPosition = window.pageYOffset;
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        const correspondingLink = document.querySelector(`.nav-pills a[href="#${section.id}"]`);
-                        
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        
-                        if (correspondingLink) {
-                            correspondingLink.classList.add('active');
-                        }
-                    }
-                });
-            });
-            
-            // Animation for elements on scroll
-            function animateOnScroll() {
-                const elements = document.querySelectorAll('.value-card, .stat-item, .registration-item');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.2;
-                    
-                    if (elementPosition < screenPosition) {
-                        element.classList.add('animate');
-                    }
-                });
-            }
-            
-            // Add CSS for animations
-            const animationStyles = document.createElement('style');
-            animationStyles.textContent = `
-                .value-card, .stat-item, .registration-item {
-                    opacity: 0;
-                    transform: translateY(30px);
-                    transition: opacity 0.6s ease, transform 0.6s ease;
-                }
-                
-                .value-card.animate, .stat-item.animate, .registration-item.animate {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            `;
-            document.head.appendChild(animationStyles);
-            
-            // Run animation check on load and scroll
-            window.addEventListener('load', animateOnScroll);
-            window.addEventListener('scroll', animateOnScroll);
-        });
-    </script>
+    <script src="../js/animations.js"></script>
 </body>
 </html> 
