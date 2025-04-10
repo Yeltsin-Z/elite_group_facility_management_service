@@ -1,6 +1,31 @@
-# Elite Group Facility Management Service - Website
+# Elite Group Facility Management
 
-This is a website for Elite Group Facility Management Service, a company that provides comprehensive facility management solutions including security services, utility management, facility maintenance, and more.
+This is the official website for Elite Group Facility Management Services. The site showcases our services, clients, and contact information.
+
+## Features
+
+- Responsive design
+- Service descriptions
+- Client showcase
+- Contact information
+- About us page
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Responsive Design
+
+## Deployment
+
+This website is deployed using GitHub Pages.
+
+Visit our website at: [Elite Group Facility Management](https://yeltsin-z.github.io/elite_group_facility_management_service/)
+
+## Contact
+
+For inquiries, please reach out through our [contact page](pages/contact.html) or email us directly.
 
 ## Project Structure
 
@@ -44,16 +69,6 @@ EliteGroup/
 │
 └── index.html               # Homepage
 ```
-
-## Features
-
-- Responsive design for all devices
-- Mobile-friendly navigation
-- Service showcase
-- Client listing with categories
-- Contact form with validation
-- Company information and history
-- Smooth animations and transitions
 
 ## Dependencies
 
