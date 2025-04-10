@@ -1,7 +1,18 @@
 [build]
   publish = "."
+  command = "echo 'No build command required for static site'"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
+  force = false
+  conditions = {Language = ["en"]}
+
+[build.environment]
+  NODE_VERSION = "16"
+
+[dev]
+  command = "python -m http.server 8888"
+  port = 8888
+  publish = "." 
