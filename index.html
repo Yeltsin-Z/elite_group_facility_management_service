@@ -7,7 +7,7 @@
     <meta name="keywords" content="facility management, security services, Elite Group">
     <meta name="author" content="Elite Group">
     <!-- GitHub Pages metadata -->
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#1a73e8">
     <link rel="canonical" href="https://yeltsin-z.github.io/elite_group_facility_management_service/">
     <title>Elite Group Facility Management Services</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -546,6 +546,7 @@
                 </div>
             </div>
         </div>
+        <div class="hero-shape"></div>
     </section>
 
     <section class="services">
@@ -756,16 +757,16 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="images/logo.png" alt="Elite Group Facility Management Service" class="footer-logo-img">
-                    <p>Facility Management Service</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> No.9, Dhanalakshmi Nagar Extn., Moulivakkam, Chennai - 600 125</p>
-                    <p><i class="fas fa-envelope"></i> elitegsservice@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> 9500005115 / 9677058997</p>
+                    <p>Professional facility management solutions delivering excellence since 2009. Your trusted partner for security, maintenance and facility services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="pages/about.html">About Us</a></li>
@@ -774,13 +775,22 @@
                         <li><a href="pages/contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-registration">
-                    <h4>Registrations</h4>
-                    <p>GST No: 33CBEPP1843B1Z4</p>
-                    <p>ESI Registration No: 51001353160001001</p>
-                    <p>EPF Registration No: TBTAM2191526000</p>
-                    <p>MSME No: UDYAM-TN-02-0011254</p>
-                    <p>PAN No: CBEPP1843B</p>
+                <div class="footer-links">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="pages/services.html">Security Guards</a></li>
+                        <li><a href="pages/services.html">Utility Management</a></li>
+                        <li><a href="pages/services.html">Facility Management</a></li>
+                        <li><a href="pages/services.html">Mechanised Cleaning</a></li>
+                        <li><a href="pages/services.html">Surveillance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> #42, NGO Colony Main Road, Nanganallur, Chennai - 600061, India</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 44 22244101 / 22244201</p>
+                    <p><i class="fas fa-envelope"></i> info@elitegroupfacility.com</p>
+                    <p><i class="fas fa-clock"></i> Monday - Saturday: 9:00 AM - 6:00 PM</p>
                 </div>
             </div>
             <div class="copyright">
@@ -790,5 +800,37 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation classes to elements
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.classList.add('animate-fade-in');
+            
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${0.1 * index}s`;
+                card.classList.add('animate-slide-up');
+            });
+            
+            // Add fade-in animation to sections
+            const sections = document.querySelectorAll('section:not(.hero)');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html> 
