@@ -193,6 +193,7 @@
             padding: 80px 0;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
         
         .client-logos::before {
@@ -209,13 +210,34 @@
         .client-logos .container {
             position: relative;
             z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .client-logos .section-title {
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .client-logos .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
         
         .logo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin: 40px auto 0;
+            max-width: 1200px;
+            justify-content: center;
         }
         
         .client-card {
@@ -228,6 +250,9 @@
             position: relative;
             z-index: 1;
             animation: fadeInUp 0.5s ease-out backwards;
+            height: 100%;
+            margin: 0 auto;
+            max-width: 100%;
         }
         
         .client-card:nth-child(2n) {
