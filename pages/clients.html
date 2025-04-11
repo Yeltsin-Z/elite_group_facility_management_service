@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clients - Elite Group</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Enhanced Client Page Styles */
+        .page-banner {
+            background-image: linear-gradient(rgba(17, 34, 68, 0.85), rgba(17, 34, 68, 0.85)), url('../images/placeholder.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+        }
+        
+        .clients-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .clients-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 30px 0;
+        }
+        
+        .category-title {
+            position: relative;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .client-category {
+            margin-bottom: 50px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .client-table {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        
+        .client-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .client-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        
+        .client-table tr:hover td {
+            background-color: #f9f9f9;
+        }
+        
+        .client-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .client-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            margin: 5px;
+            background-color: var(--gray-color);
+            border: none;
+            border-radius: 30px;
+            color: var(--dark-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+        }
+        
+        .logo-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            background-color: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: var(--dark-gray);
+            text-align: center;
+            padding: 15px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            color: var(--primary-color);
+        }
+        
+        .contact-cta {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .contact-cta h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        
+        .contact-cta p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-cta .btn {
+            background-color: var(--primary-color);
+            font-size: 1.1rem;
+            padding: 12px 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+            
+            .client-category {
+                padding: 20px;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Logo styles */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            max-height: 80px;
+            width: auto;
+        }
+        
+        .footer-logo-img {
+            max-height: 60px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Elite Group Facility Management Service" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="clients.html" class="active">Clients</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Our Clients</h1>
+        </div>
+    </section>
+
+    <section class="clients-intro">
+        <div class="container">
+            <h2 class="section-title">Trusted by Leading Organizations</h2>
+            <div class="clients-stats">
+                <div class="stat-item">
+                    <h3>250+</h3>
+                    <p>Projects Done</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+            <p>Elite Group is proud to serve a wide range of clients across various sectors. Our commitment to quality and reliability has earned us the trust of numerous organizations in Chennai and surrounding areas.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="client-filter">
+            <button class="filter-btn active" data-filter="all">All Sectors</button>
+            <button class="filter-btn" data-filter="civil">Civil Projects</button>
+            <button class="filter-btn" data-filter="auto">Automobile</button>
+            <button class="filter-btn" data-filter="apartment">Apartments</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+            <button class="filter-btn" data-filter="it">IT Industries</button>
+            <button class="filter-btn" data-filter="other">Others</button>
+        </div>
+    </div>
+
+    <!-- Civil Projects Section -->
+    <section class="client-category" data-category="civil">
+        <div class="container">
+            <h2 class="category-title">Civil Projects</h2>
+            <div class="client-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, MYLAPORE</td>
+                            <td><i class="fas fa-building"></i> CCCL CMRL PROJECT PHASE I YARD, THIRUVERKADU</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, MANDAVELI</td>
+                            <td><i class="fas fa-building"></i> CCCL SUN NETWORK, MRC NAGAR</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, ADYAR</td>
+                            <td><i class="fas fa-building"></i> CCCL CHENNAI INTERNATIONAL AIRPORT (NEW EXTENSION)</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, INDRA NAGAR</td>
+                            <td><i class="fas fa-building"></i> CCCL AIRPORT PROJECT YARD, COWL BAZAR</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, THARAMANI</td>
+                            <td><i class="fas fa-building"></i> CCCL SIEMENS GAMESA, NELLORE</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, RK SALAI</td>
+                            <td><i class="fas fa-building"></i> CCCL CHENNAI PORT - MADURAVOYAL EXPRESSWAY</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, KILPAUK</td>
+                            <td><i class="fas fa-building"></i> CCCL MOOLAKADAI FLYOVER</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-building"></i> RVNL, CMRL PROJECT PHASE II, NUNGAMBAKKAM</td>
+                            <td><i class="fas fa-building"></i> CCCL APARTMENT PROJECT, PALLIKARANI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automobile Industries Section -->
+    <section class="client-category" data-category="auto">
+        <div class="container">
+            <h2 class="category-title">Automobile Industries</h2>
+            <div class="client-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-car"></i> CARS INDRA PVT LTD SERVICE, ADYAR</td>
+                            <td><i class="fas fa-car"></i> CARS INDRA PVT LTD SHOWROOM AND SERVICE, KOTTIVAKKAM</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-car"></i> CARS INDRA PVT LTD SHOWROOM, NANDANAM</td>
+                            <td><i class="fas fa-car"></i> KHIVRAJ MOTORS, ANNA SALAI</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-car"></i> CARS INDRA PVT LTD SHOWROOM AND SERVICE, PUZHAL</td>
+                            <td><i class="fas fa-car"></i> KHIVRAJ MOTORS, GUINDY</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-car"></i> CARS INDRA PVT LTD YARD, PUZHAL</td>
+                            <td><i class="fas fa-car"></i> KUN VOLKSWAGEN ALANDUR</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-car"></i> CARS INDRA PVT LTD SHOWROOM, VALASARAVAKKAM</td>
+                            <td><i class="fas fa-car"></i> KUN VOLKSWAGEN ANNA NAGAR</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-car"></i> CARS INDRA PVT LTD SERVICE, GERUGAMBAKKAM</td>
+                            <td><i class="fas fa-car"></i> KUN VOLKSWAGEN KOTTIVAKKAM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartments Section -->
+    <section class="client-category" data-category="apartment">
+        <div class="container">
+            <h2 class="category-title">Apartments</h2>
+            <div class="client-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-home"></i> APPASWAMY REAL ESTATE GREENVILLE, SHOLINGANALLUR</td>
+                            <td><i class="fas fa-home"></i> RAMANIYAM SARASWATHI, BESANT NAGAR</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-home"></i> APPASWAMY REAL ESTATE LUZ AMOR, MYLAPORE</td>
+                            <td><i class="fas fa-home"></i> RAMANIYAM KATI-MA, THORAIPAKKAM</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-home"></i> APPASWAMY REAL ESTATE CERUS, VIRIGAMBAKKAM</td>
+                            <td><i class="fas fa-home"></i> RAMANIYAM SAROVAR, VELACHERY</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-home"></i> APPASWAMY REAL ESTATE CITY SQUARE, KANDHANCHAVADI</td>
+                            <td><i class="fas fa-home"></i> RAMANIYAM TULIVE URBANVILLE, VELACHERY</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-home"></i> APPASWAMY REAL ESTATE CITYSIDE, KANDHANCHAVADI</td>
+                            <td><i class="fas fa-home"></i> RAMANIYAM DHAWNI, BESANT NAGAR</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Institutions Section -->
+    <section class="client-category" data-category="education">
+        <div class="container">
+            <h2 class="category-title">Educational Institutions</h2>
+            <div class="client-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-graduation-cap"></i> SUNSHINE SCHOOL, VELACHERY</td>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, RAMANIYAM</td>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, VEPERY</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, POONAMALLEE</td>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, MADIPAKKAM</td>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, KODUNGAIYUR</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, PORUR</td>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, MEDAVAKKAM</td>
+                            <td><i class="fas fa-graduation-cap"></i> NARAYANA SCHOOL, KOLATHUR</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-graduation-cap"></i> MEENAKSHI COLLEGE OF ENGINEERING, VIRUGAMBAKKAM</td>
+                            <td><i class="fas fa-graduation-cap"></i> MIET CHENNAI, KODAMBAKKAM</td>
+                            <td><i class="fas fa-graduation-cap"></i> DHAANISH AHMED COLLEGE OF ENGINEERING, PADAPPAI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Industries Section -->
+    <section class="client-category" data-category="it">
+        <div class="container">
+            <h2 class="category-title">IT Industries</h2>
+            <div class="client-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-laptop"></i> NPS TECHNOLOGY, GUINDY</td>
+                            <td><i class="fas fa-laptop"></i> DOWLATH TOWERS, KILPAUK</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-laptop"></i> KADAMBA TECHNOLOGY, MYLAPORE</td>
+                            <td><i class="fas fa-laptop"></i> GOLDEN ENCLAVE, KILPAUK</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-laptop"></i> KADAMBA TECHNOLOGY, MEDAVAKKAM</td>
+                            <td><i class="fas fa-laptop"></i> GI RETAIL PVT LTD, GUINDY</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Others Section -->
+    <section class="client-category" data-category="other">
+        <div class="container">
+            <h2 class="category-title">Others</h2>
+            <div class="client-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-store"></i> COFFEE DAY, ADYAR</td>
+                            <td><i class="fas fa-store"></i> FASHION FOLKS, NUNGAMBAKKAM</td>
+                            <td><i class="fas fa-store"></i> NAIDUHALL, VALASARAVAKKAM</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-store"></i> COFFEE DAY, INDRA NAGAR</td>
+                            <td><i class="fas fa-store"></i> NAIDUHALL, T.NAGAR</td>
+                            <td><i class="fas fa-store"></i> VASANTHA BHAVAN, EGMORE</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-store"></i> COFFEE DAY, BESANT NAGAR</td>
+                            <td><i class="fas fa-store"></i> NAIDUHALL, AMBATTUR</td>
+                            <td><i class="fas fa-store"></i> VASANTHA BHAVAN, CHROMEPET</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-store"></i> KALYANI HOSPITAL, MYLAPORE</td>
+                            <td><i class="fas fa-store"></i> PARPIA INTERNATIONAL, KODAMBAKKAM</td>
+                            <td><i class="fas fa-store"></i> J.S, EKKATUTHANGAL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="client-logos">
+        <div class="container">
+            <h2 class="section-title">Our Major Clients</h2>
+            <div class="logo-grid">
+                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Narayana</div>
+                <div class="logo-item"><i class="fas fa-industry"></i><br>BGR Energy</div>
+                <div class="logo-item"><i class="fas fa-car"></i><br>Popular Vehicles</div>
+                <div class="logo-item"><i class="fas fa-laptop"></i><br>Kadamba</div>
+                <div class="logo-item"><i class="fas fa-building"></i><br>Naiduhall</div>
+                <div class="logo-item"><i class="fas fa-car"></i><br>Volkswagen</div>
+                <div class="logo-item"><i class="fas fa-plane"></i><br>Airports Authority</div>
+                <div class="logo-item"><i class="fas fa-home"></i><br>Appaswamy Estates</div>
+                <div class="logo-item"><i class="fas fa-subway"></i><br>Chennai Metro</div>
+                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Meenakshi College</div>
+                <div class="logo-item"><i class="fas fa-globe"></i><br>Parpia Intl.</div>
+                <div class="logo-item"><i class="fas fa-fan"></i><br>Gamesa</div>
+                <div class="logo-item"><i class="fas fa-utensils"></i><br>Vasantha Bhavan</div>
+                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Sunshine</div>
+                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Dhaanish College</div>
+                <div class="logo-item"><i class="fas fa-building"></i><br>URC</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Want to Join Our Client List?</h2>
+            <p>Contact us to discuss your facility management requirements.</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/logo.png" alt="Elite Group Facility Management Service" class="footer-logo-img">
+                    <p>Facility Management Service</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> No.9, Dhanalakshmi Nagar Extn., Moulivakkam, Chennai - 600 125</p>
+                    <p><i class="fas fa-envelope"></i> elitegsservice@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 9500005115 / 9677058997</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-registration">
+                    <h4>Registrations</h4>
+                    <p>GST No: 33CBEPP1843B1Z4</p>
+                    <p>ESI Registration No: 51001353160001001</p>
+                    <p>EPF Registration No: TBTAM2191526000</p>
+                    <p>MSME No: UDYAM-TN-02-0011254</p>
+                    <p>PAN No: CBEPP1843B</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Elite Group Facility Management Service. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Client filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const categories = document.querySelectorAll('.client-category');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Show all categories or filter specific ones
+                    if (filter === 'all') {
+                        categories.forEach(cat => {
+                            cat.style.display = 'block';
+                        });
+                    } else {
+                        categories.forEach(cat => {
+                            if (cat.getAttribute('data-category') === filter) {
+                                cat.style.display = 'block';
+                            } else {
+                                cat.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

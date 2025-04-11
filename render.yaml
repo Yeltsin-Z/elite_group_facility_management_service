@@ -1,0 +1,5 @@
+services:
+  - type: static
+    name: elite-group-facility
+    buildCommand: ./build.sh
+    publishDir: .
