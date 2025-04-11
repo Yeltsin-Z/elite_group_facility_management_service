@@ -186,6 +186,223 @@
             width: auto;
             margin-bottom: 10px;
         }
+        
+        /* Enhanced Client Logos Section Styles */
+        .client-logos {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .client-logos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(204, 51, 51, 0.05) 0%, rgba(17, 34, 68, 0.05) 70%);
+            z-index: 0;
+        }
+        
+        .client-logos .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .client-card {
+            display: flex;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.5s ease-out backwards;
+        }
+        
+        .client-card:nth-child(2n) {
+            animation-delay: 0.1s;
+        }
+        
+        .client-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        .client-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .client-card:hover::before {
+            opacity: 1;
+        }
+        
+        .client-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .client-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+            z-index: 1;
+        }
+        
+        .client-icon svg {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+        
+        .client-card:hover .client-icon svg {
+            transform: scale(1.1);
+        }
+        
+        .client-info {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .client-info::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .client-card:hover .client-info::after {
+            width: 50px;
+        }
+        
+        .client-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .client-info p {
+            margin: 0;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Client category colors */
+        .education .client-icon {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .industry .client-icon {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        
+        .auto .client-icon {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        
+        .tech .client-icon {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+        
+        .real-estate .client-icon {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+        }
+        
+        .transport .client-icon {
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+        }
+        
+        .global .client-icon {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+        }
+        
+        .energy .client-icon {
+            background: linear-gradient(135deg, #d35400, #e67e22);
+        }
+        
+        .hospitality .client-icon {
+            background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 20px;
+            }
+            
+            .client-icon {
+                width: 80px;
+            }
+            
+            .client-info h3 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .client-logos {
+                padding: 50px 0;
+            }
+            
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -453,22 +670,237 @@
         <div class="container">
             <h2 class="section-title">Our Major Clients</h2>
             <div class="logo-grid">
-                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Narayana</div>
-                <div class="logo-item"><i class="fas fa-industry"></i><br>BGR Energy</div>
-                <div class="logo-item"><i class="fas fa-car"></i><br>Popular Vehicles</div>
-                <div class="logo-item"><i class="fas fa-laptop"></i><br>Kadamba</div>
-                <div class="logo-item"><i class="fas fa-building"></i><br>Naiduhall</div>
-                <div class="logo-item"><i class="fas fa-car"></i><br>Volkswagen</div>
-                <div class="logo-item"><i class="fas fa-plane"></i><br>Airports Authority</div>
-                <div class="logo-item"><i class="fas fa-home"></i><br>Appaswamy Estates</div>
-                <div class="logo-item"><i class="fas fa-subway"></i><br>Chennai Metro</div>
-                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Meenakshi College</div>
-                <div class="logo-item"><i class="fas fa-globe"></i><br>Parpia Intl.</div>
-                <div class="logo-item"><i class="fas fa-fan"></i><br>Gamesa</div>
-                <div class="logo-item"><i class="fas fa-utensils"></i><br>Vasantha Bhavan</div>
-                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Sunshine</div>
-                <div class="logo-item"><i class="fas fa-graduation-cap"></i><br>Dhaanish College</div>
-                <div class="logo-item"><i class="fas fa-building"></i><br>URC</div>
+                <div class="client-card education">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1L1 8l11 7 9-5.8V17a2 2 0 104 0V8l-13-7z"/>
+                            <path d="M4 15v4c0 1.1 2.4 2 6 2s6-.9 6-2v-4"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Narayana</h3>
+                        <p>Educational Institution</p>
+                    </div>
+                </div>
+                <div class="client-card industry">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19.5 8.9l-1.5 1V17H3V6h10.1l1-1.5M22 5V2h-3l-7 7H6m14 4v-4h-4l-2 2M6 14h8"/>
+                            <path d="M3 10h5m2 4h3"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>BGR Energy</h3>
+                        <p>Power Systems</p>
+                    </div>
+                </div>
+                <div class="client-card auto">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                            <path d="M5 9l2 -4h8l2 4"/>
+                            <path d="M5 9h11a3 3 0 0 1 3 3v3h-2m-10 0h-3"/>
+                            <path d="M10 9v4"/>
+                            <path d="M14 9v4"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Popular Vehicles</h3>
+                        <p>Automotive</p>
+                    </div>
+                </div>
+                <div class="client-card tech">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 6m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/>
+                            <path d="M20 11v2"/>
+                            <path d="M7 12l3 3l3 -3"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Kadamba</h3>
+                        <p>IT Solutions</p>
+                    </div>
+                </div>
+                <div class="client-card real-estate">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21l18 0"/>
+                            <path d="M5 21v-14l14 -4v18"/>
+                            <path d="M9 21v-8a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v8"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Naiduhall</h3>
+                        <p>Real Estate</p>
+                    </div>
+                </div>
+                <div class="client-card auto">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 11a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/>
+                            <path d="M15 11a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/>
+                            <path d="M7 5l4 0"/>
+                            <path d="M13 5l2 0"/>
+                            <path d="M4 7l3.5 1.5"/>
+                            <path d="M16.5 8.5l3.5 -1.5"/>
+                            <path d="M18.5 20c-.5 -6.5 -3 -12 -6.5 -12s-6 5.5 -6.5 12"/>
+                            <path d="M9 20l6 0"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Volkswagen</h3>
+                        <p>Automotive</p>
+                    </div>
+                </div>
+                <div class="client-card transport">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 10h4a2 2 0 0 1 0 4h-4l-4 7h-3l2 -7h-4l-2 2h-3l2 -4l-2 -4h3l2 2h4l-2 -7h3z"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Airports Authority</h3>
+                        <p>Aviation</p>
+                    </div>
+                </div>
+                <div class="client-card real-estate">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18"/>
+                            <path d="M19 21v-8h2l-9-9-9 9h2v8"/>
+                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/>
+                            <path d="M9 9h6"/>
+                            <path d="M9 12h6"/>
+                            <path d="M9 15h6"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Appaswamy Estates</h3>
+                        <p>Real Estate</p>
+                    </div>
+                </div>
+                <div class="client-card transport">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/>
+                            <path d="M3 12h18"/>
+                            <path d="M12 3v18"/>
+                            <path d="M7.5 7.5l9 9"/>
+                            <path d="M7.5 16.5l9 -9"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Chennai Metro</h3>
+                        <p>Urban Transit</p>
+                    </div>
+                </div>
+                <div class="client-card education">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"/>
+                            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Meenakshi College</h3>
+                        <p>Higher Education</p>
+                    </div>
+                </div>
+                <div class="client-card global">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/>
+                            <path d="M3.6 9h16.8"/>
+                            <path d="M3.6 15h16.8"/>
+                            <path d="M11.5 3a17 17 0 0 0 0 18"/>
+                            <path d="M12.5 3a17 17 0 0 1 0 18"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Parpia Intl.</h3>
+                        <p>Global Commerce</p>
+                    </div>
+                </div>
+                <div class="client-card energy">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/>
+                            <path d="M6.859 9c.794 -1.105 2.057 -1.976 3.551 -2.356"/>
+                            <path d="M6.341 12a6.003 6.003 0 0 0 1.5 3.3"/>
+                            <path d="M8.959 18.431a6.5 6.5 0 0 0 2.807 .55"/>
+                            <path d="M14.9 18.41c.716 -.82 1.24 -1.834 1.5 -2.92"/>
+                            <path d="M17.477 11.89a6 6 0 0 0 -1.77 -3.199"/>
+                            <path d="M20 12h2"/>
+                            <path d="M2 12h2"/>
+                            <path d="M12 2v2"/>
+                            <path d="M12 20v2"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Gamesa</h3>
+                        <p>Energy Solutions</p>
+                    </div>
+                </div>
+                <div class="client-card hospitality">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 19h18"/>
+                            <path d="M5 17h14a6 6 0 0 0 6 -6a4 4 0 0 0 -4 -4h-16a4 4 0 0 0 -4 4a6 6 0 0 0 6 6z"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Vasantha Bhavan</h3>
+                        <p>Restaurant Chain</p>
+                    </div>
+                </div>
+                <div class="client-card education">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21v-12l2 -3h10l2 3v12"/>
+                            <path d="M10 21v-8h4v8"/>
+                            <path d="M8 9h8"/>
+                            <path d="M9 17h2"/>
+                            <path d="M13 17h2"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Sunshine</h3>
+                        <p>Educational Institution</p>
+                    </div>
+                </div>
+                <div class="client-card education">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3L4 7l8 4l8 -4l-8 -4"/>
+                            <path d="M4 7v5l8 4l8 -4v-5"/>
+                            <path d="M20 18l-3 1.5l-2 -1l-3 1.5l-2 -1l-3 1.5l-3 -1.5v-6l3 1.5l2 -1l3 1.5l2 -1l3 1.5l3 -1.5"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>Dhaanish College</h3>
+                        <p>Engineering Education</p>
+                    </div>
+                </div>
+                <div class="client-card real-estate">
+                    <div class="client-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21v-14l14 -4v18"/>
+                            <path d="M15 11v.01"/>
+                            <path d="M15 14v.01"/>
+                            <path d="M15 17v.01"/>
+                            <path d="M9 14v.01"/>
+                            <path d="M9 17v.01"/>
+                        </svg>
+                    </div>
+                    <div class="client-info">
+                        <h3>URC</h3>
+                        <p>Real Estate Development</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
